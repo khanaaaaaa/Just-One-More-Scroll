@@ -1,26 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Just One More Scroll</title>
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
 
-  <div id="topbar">
-    <span>Just One More Scroll</span>
-    <button id="focusBtn">Start Focus Mode</button>
+  <!-- LEFT SIDEBAR -->
+  <aside id="left-sidebar">
+    <div id="logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="8" fill="#fe2c55"/>
+        <text x="7" y="23" font-size="18">&#128218;</text>
+      </svg>
+      <span id="logo-text">StudyOrScroll<br/><b>Your choice.</b></span>
+    </div>
+
+    <nav id="left-nav">
+      <a class="lnav-item active" href="#" data-tab="home">
+        <svg class="lnav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+        <span>For You</span>
+      </a>
+      <a class="lnav-item" href="#" data-tab="following">
+        <svg class="lnav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M16 11c1.66 0 2.99-1.34 2.99-3S17.66 5 16 5c-1.66 0-3 1.34-3 3s1.34 3 3 3zm-8 0c1.66 0 2.99-1.34 2.99-3S9.66 5 8 5C6.34 5 5 6.34 5 8s1.34 3 3 3zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5c0-2.33-4.67-3.5-7-3.5zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z"/></svg>
+        <span>Study Buddies</span>
+      </a>
+      <a class="lnav-item" href="#" data-tab="explore">
+        <svg class="lnav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        <span>Explore</span>
+      </a>
+      <a class="lnav-item" href="#" id="tasksNavBtn" data-tab="tasks">
+        <svg class="lnav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        <span>Study Tasks</span>
+        <span id="taskBadge" class="lnav-badge hidden">0</span>
+      </a>
+      <a class="lnav-item" href="#" data-tab="live">
+        <svg class="lnav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M17 10.5V7c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1v10c0 .55.45 1 1 1h12c.55 0 1-.45 1-1v-3.5l4 4v-11l-4 4z"/></svg>
+        <span>Study LIVE</span>
+      </a>
+      <a class="lnav-item" href="#" data-tab="profile">
+        <svg class="lnav-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/></svg>
+        <span>Profile</span>
+      </a>
+    </nav>
+
+    <button id="uploadBtn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"/></svg>
+      Add Task
+    </button>
+
+    <div id="focus-section">
+      <button id="focusBtn">&#9654; Start Focus</button>
+      <div id="timerPill" class="hidden">&#9201; <span id="timerText">25:00</span></div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div id="suggested-section">
+      <p class="sidebar-heading">Suggested study accounts</p>
+      <div class="suggested-user">
+        <div class="su-avatar">&#128218;</div>
+        <div class="su-info"><span class="su-name">studywithme</span><span class="su-handle">@studywithme</span></div>
+        <button class="su-follow">Follow</button>
+      </div>
+      <div class="suggested-user">
+        <div class="su-avatar">&#127919;</div>
+        <div class="su-info"><span class="su-name">daily.goals</span><span class="su-handle">@daily.goals</span></div>
+        <button class="su-follow">Follow</button>
+      </div>
+      <div class="suggested-user">
+        <div class="su-avatar">&#129504;</div>
+        <div class="su-info"><span class="su-name">brainpower.tok</span><span class="su-handle">@brainpower.tok</span></div>
+        <button class="su-follow">Follow</button>
+      </div>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div id="left-footer">
+      About · Privacy · Terms · More<br/>
+      <span style="opacity:0.35">© 2025 Just One More Scroll</span>
+    </div>
+  </aside>
+
+  <!-- CENTER FEED -->
+  <main id="center">
+    <div id="feed-tabs">
+      <span class="feed-tab" id="tab-following">Study Buddies</span>
+      <span class="feed-tab active" id="tab-foryou">For You</span>
+    </div>
+    <div id="feed"></div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside id="right-sidebar">
+    <div id="right-actions">
+      <!-- populated by JS on each scroll -->
+    </div>
+  </aside>
+
+  <!-- TASK PANEL -->
+  <div id="taskOverlay"></div>
+  <div id="taskPanel">
+    <div id="taskPanel-header">
+      <span>&#128203; Study Tasks</span>
+      <button id="closeTaskPanel">&#10005;</button>
+    </div>
+    <div id="taskList"></div>
+    <div id="taskInputRow">
+      <input type="text" id="taskInput" placeholder="What do you need to study today?"/>
+      <button id="addTask">Add</button>
+    </div>
   </div>
 
-  <div id="feed"></div>
+  <!-- Floating hearts -->
+  <div id="heartsContainer"></div>
 
-  <div id="bottombar">
-    <input type="text" id="taskInput" placeholder="Enter a task…" />
-    <button id="addTask">Add</button>
-  </div>
-
-  <div id="timerDisplay" class="hidden">⏱ <span id="timerText">25:00</span></div>
+  <!-- Toast -->
+  <div id="toast"></div>
 
   <script src="script.js"></script>
 </body>
